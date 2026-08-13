@@ -1,0 +1,17 @@
+<div *ngIf="isLoading; else courseGrid">
+  <p>Loading courses...</p>
+</div>
+
+<ng-template #courseGrid>
+  <div *ngIf="courses.length > 0; else noCourses">
+    <app-course-card 
+      *ngFor="let c of courses; trackBy: trackByCourseId" 
+      [course]="c" 
+      (enrollRequested)="onEnroll($event)">
+    </app-course-card>
+  </div>
+</ng-template>
+
+<ng-template #noCourses>
+  <p>No courses available.</p>
+</ng-template>

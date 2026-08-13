@@ -1,0 +1,22 @@
+<section class="home-hero">
+  <h2>Welcome to the Student Course Portal</h2>
+  <p>Manage your academic journey, browse courses, and track your progress seamlessly.</p>
+  <div class="stats-row">
+    <div class="stat-card">Courses Available: 12</div>
+    <div class="stat-card">Enrolled: 3</div>
+    <div class="stat-card">GPA: 3.8</div>
+  </div>
+</section>
+
+<div class="bindings-demo">
+  <!-- 1. Interpolation -->
+  <h3>{{ portalName }}</h3>
+
+  <!-- 2. Property Binding -->
+  <button [disabled]="!isPortalActive" (click)="onEnrollClick()">Enroll Now</button>
+  <p>{{ message }}</p>
+
+  <!-- 3. Two-Way Binding -->
+  <input type="text" [(ngModel)]="searchTerm" placeholder="Search courses..." />
+  <p>Searching for: {{ searchTerm }}</p>
+</div>
